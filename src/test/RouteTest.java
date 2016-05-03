@@ -2,7 +2,6 @@ package test;
 
 import com.company.models.Route;
 import com.company.models.Waypoint;
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -19,13 +18,20 @@ public class RouteTest {
 
     @Test
     public void can_add_waypoint() {
-        Waypoint waypoint = null;
-        try {
-            waypoint = new Waypoint(20.0, 10.0);
-        } catch (InvalidArgumentException e) {
-            e.printStackTrace();
-        }
+        Waypoint waypoint = new Waypoint(20.0, 10.0);
         route.addWaypoint(waypoint);
         assertEquals(route.waypoints.get(0), waypoint);
+    }
+
+    @Test
+    public void cannot_add_waypoints_with_invalid_longitude() {
+        Waypoint invalidLongitude = new Waypoint(20.0, 200.0);
+        assertEquals(false, route.addWaypoint(invalidLongitude));
+    }
+
+    @Test
+    public void cannot_add_waypoints_with_invalid_latitude() {
+        Waypoint invalidLatitude = new Waypoint(200.0, 10.0);
+        assertEquals(false, route.addWaypoint(invalidLatitude));
     }
 }

@@ -24,25 +24,4 @@ public class WaypointTest {
         boolean test = validWaypoint.longitude == 10.0;
         assertEquals( true, test );
     }
-
-    @Test
-    public void validates_latitude() {
-        try {
-            new Waypoint(100.0, 10.0);
-            fail("Excepted an InvalidArgumentException to be thrown");
-        } catch (InvalidArgumentException e) {
-            assertThat(e.getMessage(), is("Invalid arguments supplied: {Invalid coordinates }"));
-        }
-    }
-
-    @Test
-    public void validates_longitude() {
-        try {
-            new Waypoint(20.0, 200.0);
-            fail("Excepted an InvalidArgumentException to be thrown");
-        } catch (InvalidArgumentException e) {
-            assertThat(e.getMessage(), is("Invalid arguments supplied: {Invalid coordinates }"));
-        }
-    }
-
 }
