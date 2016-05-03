@@ -14,11 +14,11 @@ public class JourneyBackTest {
     Waypoint second = new Waypoint(100.0,50.0);
     Waypoint third = new Waypoint(0.0,160.0);
 
-ArrayList<Waypoint> waypoints = new ArrayList<Waypoint>(){{
-    add(first);
-    add(second);
-    add(third);
-}};
+    ArrayList<Waypoint> waypoints = new ArrayList<Waypoint>(){{
+        add(first);
+        add(second);
+        add(third);
+    }};
 
     JourneyBack journeyBack = new JourneyBack(waypoints);
 

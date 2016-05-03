@@ -10,9 +10,6 @@ import static org.junit.Assert.*;
 public class WaypointTest {
     Waypoint validWaypoint = new Waypoint(20.0, 10.0);
 
-//    public WaypointTest()  {
-//    }
-
     @Test
     public void has_latitude() {
         boolean test = validWaypoint.latitude == 20.0;
