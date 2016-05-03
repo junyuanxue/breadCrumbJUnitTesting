@@ -1,0 +1,48 @@
+package test;
+
+import com.company.models.Waypoint;
+import com.sun.javaws.exceptions.InvalidArgumentException;
+import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
+
+public class WaypointTest {
+    Waypoint validWaypoint = new Waypoint(20.0, 10.0);
+
+    public WaypointTest() throws InvalidArgumentException {
+    }
+
+    @Test
+    public void has_latitude() {
+        boolean test = validWaypoint.latitude == 20.0;
+        assertEquals( true, test );
+    }
+
+    @Test
+    public void has_longitude() {
+        boolean test = validWaypoint.longitude == 10.0;
+        assertEquals( true, test );
+    }
+
+    @Test
+    public void validates_latitude() {
+        try {
+            new Waypoint(100.0, 10.0);
+            fail("Excepted an InvalidArgumentException to be thrown");
+        } catch (InvalidArgumentException e) {
+            assertThat(e.getMessage(), is("Invalid arguments supplied: {Invalid coordinates }"));
+        }
+    }
+
+    @Test
+    public void validates_longitude() {
+        try {
+            new Waypoint(20.0, 200.0);
+            fail("Excepted an InvalidArgumentException to be thrown");
+        } catch (InvalidArgumentException e) {
+            assertThat(e.getMessage(), is("Invalid arguments supplied: {Invalid coordinates }"));
+        }
+    }
+
+}
