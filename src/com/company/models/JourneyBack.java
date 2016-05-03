@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class JourneyBack {
 
     public ArrayList<Waypoint> waypoints;
-    public Waypoint currentWaypoint;
+    public Waypoint nextWaypoint;
 
     public JourneyBack(ArrayList<Waypoint> routeWaypoints) {
         waypoints = routeWaypoints;
         int index = waypoints.size() - 1;
-        currentWaypoint = waypoints.get(index);
+        nextWaypoint = waypoints.get(index);
     }
 
 

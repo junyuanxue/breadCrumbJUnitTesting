@@ -29,7 +29,7 @@ public class JourneyBackTest {
     }
 
     @Test
-    public void has_current_waypoint() {
-        assertEquals( journeyBack.currentWaypoint, third );
+    public void initializes_with_the_correct_next_waypoint() {
+        assertEquals( journeyBack.nextWaypoint, third );
     }
 }
