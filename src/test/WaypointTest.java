@@ -10,8 +10,8 @@ import static org.junit.Assert.*;
 public class WaypointTest {
     Waypoint validWaypoint = new Waypoint(20.0, 10.0);
 
-    public WaypointTest() throws InvalidArgumentException {
-    }
+//    public WaypointTest()  {
+//    }
 
     @Test
     public void has_latitude() {
