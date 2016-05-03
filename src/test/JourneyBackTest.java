@@ -30,6 +30,17 @@ public class JourneyBackTest {
 
     @Test
     public void initializes_with_the_correct_next_waypoint() {
-        assertEquals( journeyBack.nextWaypoint, third );
+        assertEquals( journeyBack.getNextWaypoint(), third );
+    }
+
+    @Test
+    public void displays_next_waypoint() {
+        assertEquals( journeyBack.getNextWaypoint(), third );
+    }
+
+    @Test
+    public void updates_next_waypoint() {
+        journeyBack.updateNextWaypoint();
+        assertEquals( journeyBack.getNextWaypoint(), second );
     }
 }
