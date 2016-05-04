@@ -5,7 +5,7 @@ import com.company.models.Waypoint;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+import static org.mockito.Mockito.mock;
 
 public class RouteTest {
 
@@ -18,20 +18,9 @@ public class RouteTest {
 
     @Test
     public void can_add_waypoint() {
-        Waypoint waypoint = new Waypoint(20.0, 10.0);
+        Waypoint waypoint = mock(Waypoint.class);
         route.addWaypoint(waypoint);
         assertEquals(route.getWaypoints().get(0), waypoint);
     }
 
-    @Test
-    public void cannot_add_waypoints_with_invalid_longitude() {
-        Waypoint invalidLongitude = new Waypoint(20.0, 200.0);
-        assertEquals(false, route.addWaypoint(invalidLongitude));
-    }
-
-    @Test
-    public void cannot_add_waypoints_with_invalid_latitude() {
-        Waypoint invalidLatitude = new Waypoint(200.0, 10.0);
-        assertEquals(false, route.addWaypoint(invalidLatitude));
-    }
 }

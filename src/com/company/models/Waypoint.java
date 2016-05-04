@@ -13,4 +13,8 @@ public class Waypoint {
     public double getLatitude() { return latitude; }
 
     public double getLongitude() { return longitude; }
+
+    public boolean isValid() {
+        return Math.abs(latitude) <= 90 && Math.abs(longitude) <= 180;
+    }
 }

@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
 
 public class JourneyBackTest {
-    Waypoint first = new Waypoint(50.0,50.0);
-    Waypoint second = new Waypoint(100.0,50.0);
-    Waypoint third = new Waypoint(0.0,160.0);
+    Waypoint first = mock(Waypoint.class);
+    Waypoint second = mock(Waypoint.class);
+    Waypoint third = mock(Waypoint.class);
 
     ArrayList<Waypoint> waypoints = new ArrayList<Waypoint>(){{
         add(first);
