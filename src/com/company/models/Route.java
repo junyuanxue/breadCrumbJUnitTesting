@@ -3,7 +3,7 @@ package com.company.models;
 import java.util.ArrayList;
 
 public class Route {
-    public ArrayList<Waypoint> waypoints = new ArrayList<Waypoint>();
+    private ArrayList<Waypoint> waypoints = new ArrayList<Waypoint>();
 
     public boolean addWaypoint(Waypoint waypoint) {
         if (isValidWaypoint(waypoint)) {
@@ -14,7 +14,9 @@ public class Route {
     }
 
     private boolean isValidWaypoint(Waypoint waypoint) {
-        return Math.abs(waypoint.latitude) <= 90 && Math.abs(waypoint.longitude) <= 180;
+        return Math.abs(waypoint.getLatitude()) <= 90 && Math.abs(waypoint.getLongitude()) <= 180;
     }
+
+    public ArrayList getWaypoints() { return waypoints; }
 
 }

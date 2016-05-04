@@ -13,14 +13,14 @@ public class RouteTest {
 
     @Test
     public void starts_with_empty_ArrayList() {
-        assertEquals(0, route.waypoints.size());
+        assertEquals(0, route.getWaypoints().size());
     }
 
     @Test
     public void can_add_waypoint() {
         Waypoint waypoint = new Waypoint(20.0, 10.0);
         route.addWaypoint(waypoint);
-        assertEquals(route.waypoints.get(0), waypoint);
+        assertEquals(route.getWaypoints().get(0), waypoint);
     }
 
     @Test

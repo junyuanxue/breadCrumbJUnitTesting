@@ -12,13 +12,13 @@ public class WaypointTest {
 
     @Test
     public void has_latitude() {
-        boolean test = validWaypoint.latitude == 20.0;
+        boolean test = validWaypoint.getLatitude() == 20.0;
         assertEquals( true, test );
     }
 
     @Test
     public void has_longitude() {
-        boolean test = validWaypoint.longitude == 10.0;
+        boolean test = validWaypoint.getLongitude() == 10.0;
         assertEquals( true, test );
     }
 }

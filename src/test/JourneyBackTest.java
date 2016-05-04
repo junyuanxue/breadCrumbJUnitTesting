@@ -24,8 +24,8 @@ public class JourneyBackTest {
 
     @Test
     public void has_waypoints() {
-        assertEquals( true, journeyBack.waypoints.contains(first) );
-        assertEquals( true, journeyBack.waypoints.contains(third) );
+        assertEquals( true, journeyBack.getWaypoints().contains(first) );
+        assertEquals( true, journeyBack.getWaypoints().contains(third) );
     }
 
     @Test

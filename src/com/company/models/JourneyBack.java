@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class JourneyBack {
 
-    public ArrayList<Waypoint> waypoints;
+    private ArrayList<Waypoint> waypoints;
     private Waypoint nextWaypoint;
 
     public JourneyBack(ArrayList<Waypoint> routeWaypoints) {
@@ -12,6 +12,8 @@ public class JourneyBack {
         int index = waypoints.size() - 1;
         nextWaypoint = waypoints.get(index);
     }
+
+    public ArrayList getWaypoints() { return waypoints; }
 
     public Waypoint getNextWaypoint() {
         return nextWaypoint;
