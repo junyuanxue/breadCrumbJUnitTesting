@@ -1,3 +1,5 @@
+# Pointr 
+
 ## About :arrow_upper_right:
 This is part of our step building our Pointr app (final project at Makers Academy). We started out building the classes in Java before we started integrating them in Android native.
 
